@@ -38,11 +38,14 @@ h1,h2,h3,h4{font-family:"Oswald",Arial,sans-serif;font-weight:500;line-height:1.
 .main-nav a:hover,.main-nav .active>a{background:var(--green);color:#fff;text-decoration:none}
 .main-nav .nogo{cursor:default}
 .has-sub{position:relative}
-.submenu{position:absolute;left:0;top:100%;background:var(--panel);min-width:230px;
+.has-sub>a::after{content:"\25BE";font-size:10px;margin-left:6px;opacity:.8}
+.submenu{position:absolute;left:0;top:100%;background:var(--panel);width:max-content;min-width:200px;max-width:320px;
   border:1px solid var(--line);border-top:3px solid var(--green);display:none;
   flex-direction:column;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:60}
-.has-sub:hover .submenu{display:flex}
-.submenu a{text-transform:none;font-size:14px;padding:9px 16px}
+/* hover dropdowns only on real pointer devices — avoids sticky :hover on touch */
+@media (hover:hover){.has-sub:hover>.submenu{display:flex}}
+.has-sub.open>.submenu{display:flex}
+.submenu a{text-transform:none;font-size:14px;padding:9px 16px;white-space:nowrap}
 .submenu a:hover{background:var(--green-d)}
 .nav-toggle{display:none;margin-left:auto;background:var(--green);color:#fff;border:0;
   font-size:22px;line-height:1;padding:8px 12px;border-radius:4px;cursor:pointer}
@@ -106,8 +109,7 @@ hr{border:0;border-top:1px solid var(--line);margin:34px 0}
   .main-nav{width:100%;display:none}
   .main-nav.open{display:block}
   .main-nav ul{flex-direction:column;gap:2px}
-  .submenu{position:static;display:flex;min-width:0;border:0;border-left:3px solid var(--green);box-shadow:none;margin-left:14px}
-  .has-sub:hover .submenu{display:flex}
+  .submenu{position:static;display:none;width:auto;max-width:none;min-width:0;border:0;border-left:3px solid var(--green);box-shadow:none;margin-left:14px}
   .hero-caption h1{font-size:32px}
   .foot-grid{grid-template-columns:1fr}
   .page-body td{display:block;width:100%!important}
