@@ -30,7 +30,8 @@ h1,h2,h3,h4{font-family:"Oswald",Arial,sans-serif;font-weight:500;line-height:1.
 .site-header .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 20px;flex-wrap:wrap}
 .logo img{height:64px;display:block}
 .main-nav{margin-left:auto}
-.main-nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0}
+.main-nav ul{list-style:none;margin:0;padding:0}
+.main-nav>ul{display:flex;gap:4px}
 .main-nav a{
   display:block;color:var(--text);font-family:"Oswald",sans-serif;text-transform:uppercase;
   font-size:14px;letter-spacing:.5px;padding:10px 14px;border-radius:4px;
@@ -108,7 +109,7 @@ hr{border:0;border-top:1px solid var(--line);margin:34px 0}
   .nav-toggle{display:block}
   .main-nav{width:100%;display:none}
   .main-nav.open{display:block}
-  .main-nav ul{flex-direction:column;gap:2px}
+  .main-nav>ul{flex-direction:column;gap:2px}
   .submenu{position:static;display:none;width:auto;max-width:none;min-width:0;border:0;border-left:3px solid var(--green);box-shadow:none;margin-left:14px}
   .hero-caption h1{font-size:32px}
   .foot-grid{grid-template-columns:1fr}
